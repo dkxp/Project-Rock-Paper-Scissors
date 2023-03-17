@@ -26,9 +26,7 @@
               alert('Invalid choice. Please try again');
               getPlayerChoice ();  
             }
-        }
-
-        const playerSelection = getPlayerChoice();
+        }    
 
         /** Function - getComputerChoice -- return rock, paper or scissors, randomly*/
         function getComputerChoice(){
@@ -42,50 +40,73 @@
                 return 'Scissors';
               }         
         }
-
-        const computerSelection = getComputerChoice();
-        
+   
         /** Function to play single round of Rock Paper Scissors with two parameters 'playerSelection'
          *  + 'computerSelection' then return a string that declares the winner "You Lose! Paper beats Rock"*/
         function playRound(playerSelection, computerSelection){
             if (playerSelection === 'Rock'){
                 if (computerSelection === 'Paper'){
-                    return 'You Lose! Paper beats Rock';
+                    return 'You Lose!';
                 } else if (computerSelection === 'Scissors'){
-                    return 'You Win! Rock beats Scissors';
+                    return 'You Win!';
                 } else {
-                    return 'You Tied! Rock ties Rock';
+                    return 'You Tied!';
                 }
             }
             if (playerSelection === 'Paper'){
                 if (computerSelection === 'Rock'){
-                    return 'You Win! Paper beats Rock';
+                    return 'You Win!';
                 } else if (computerSelection === 'Scissors'){
-                    return 'You Lose! Scissor beats Paper';
+                    return 'You Lose!';
                 } else {
-                    return 'You Tied! Paper ties Paper';
+                    return 'You Tied!';
                 }
             }
             if (playerSelection === 'Scissors'){
                 if (computerSelection === 'Rock'){
-                    return 'You Lose! Rock beats Scissors';
+                    return 'You Lose!';
                 } else if (computerSelection === 'Paper'){
-                    return 'You Win! Scissors beats Rock';
+                    return 'You Win!';
                 } else {
-                    return 'You Tied! Scissors ties Scissors';
+                    return 'You Tied!';
                 }
             }
         }
 
-        console.log(playRound(playerSelection, computerSelection));
-
         /** Function game(). Call playRound() inside game() to play a 5 round game; keep score; report winner/loser*/
+        let computerWin = 0;
+        let playerWin = 0;
+        let internalCounter = 0;
+       
         function game(){
             for (let i = 0; i < 5; i++) {
-              let playerRound = getPlayerChoice;
-
+                let playerSelection = getPlayerChoice();
+                let computerSelection = getComputerChoice();
+                let roundResult = playRound(playerSelection, computerSelection);
+                switch (roundResult) {
+                    case 'You Lose!':
+                        computerWin += 1;
+                        break;
+                    case 'You Win!':
+                        playerWin += 1;
+                        break;       
+                }
+                internalCounter += 1;
+                if (internalCounter === 5){
+                    if (computerWin > playerWin){
+                        alert('Computer Wins! Better luck next time!');
+                    }
+                    if (playerWin > computerWin){
+                        alert('Player Wins! Long live humans!');
+                    }
+                    if (playerWin === computerWin){
+                        alert('Draw! Play again!');
+                    }
+                }            
             }
         } 
+
+        console.log(game());
         
     
     </script>
