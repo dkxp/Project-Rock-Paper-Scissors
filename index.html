@@ -76,8 +76,8 @@
         /** Function game(). Call playRound() inside game() to play a 5 round game; keep score; report winner/loser*/
         let computerWin = 0;
         let playerWin = 0;
-        let internalCounter = 0;
-       
+        let loopCounter = 0;
+        
         function game(){
             for (let i = 0; i < 5; i++) {
                 let playerSelection = getPlayerChoice();
@@ -92,7 +92,7 @@
                         break;       
                 }
                 internalCounter += 1;
-                if (internalCounter === 5){
+                if (loopCounter === 5){
                     if (computerWin > playerWin){
                         alert('Computer Wins! Better luck next time!');
                     }
