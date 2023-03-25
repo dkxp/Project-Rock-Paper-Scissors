@@ -5,118 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script type="text/javascript" src="path-to-javascript-file.js"></script>
+    
 </head>
 <body>
-    <script>
-        /** Get Player Choice */
-        function getPlayerChoice () {
-            let userChoice = prompt("Rock, Paper, Scissors?");
-            let capitalizedUserChoice = userChoice.toUpperCase();
-            if (capitalizedUserChoice === 'ROCK'){
-                return 'Rock';
-            }
-            if (capitalizedUserChoice === 'PAPER'){
-                return 'Paper';
-            }
-            if (capitalizedUserChoice === 'SCISSORS'){
-                return 'Scissors';
-            }
-            if (capitalizedUserChoice === 'SCISSOR'){
-                return 'Scissors';
-            }
-            else {
-              alert('Invalid choice. Please try again');
-              getPlayerChoice ();  
-            }
-        }    
+    <button id="Rock">Rock!</button>
+    <button id="Paper">Paper!</button>
+    <button id="Scissors">Scissors!</button>
 
-        /** Function - getComputerChoice -- return rock, paper or scissors, randomly*/
-        function getComputerChoice(){
-            let randomInt = Math.floor(Math.random() * 100);
-            if (randomInt <= 33) {
-                return 'Rock';
-            } else if (randomInt >= 67) {
-                return 'Paper';
-            }
-              else {
-                return 'Scissors';
-              }         
-        }
-   
-        /** Function to play single round of Rock Paper Scissors with two parameters 'playerSelection'
-         *  + 'computerSelection' then return a string that declares the winner "You Lose! Paper beats Rock"*/
-        function playRound(playerSelection, computerSelection){
-            if (playerSelection === 'Rock'){
-                if (computerSelection === 'Paper'){
-                    alert('You Lose! Paper beats Rock!');
-                    return 'You Lose!';
-                } else if (computerSelection === 'Scissors'){
-                    alert('You Win! Rock beats Scissors!');
-                    return 'You Win!';
-                } else {
-                    alert('You Tied! Rock and rock, the less popular cousin to rock and roll!');
-                    return 'You Tied!';
-                }
-            }
-            if (playerSelection === 'Paper'){
-                if (computerSelection === 'Rock'){
-                    alert('You Win! Paper beats Rock!');
-                    return 'You Win!';
-                } else if (computerSelection === 'Scissors'){
-                    alert('You Lose! Scissors beats Paper!');
-                    return 'You Lose!';
-                } else {
-                    alert('You Tied! Paper and paper make for a wet towel fight!');
-                    return 'You Tied!';
-                }
-            }
-            if (playerSelection === 'Scissors'){
-                if (computerSelection === 'Rock'){
-                    alert('You Lose! Rock beats Scissors!');
-                    return 'You Lose!';
-                } else if (computerSelection === 'Paper'){
-                    alert('You Win! Scissors beats Paper!');
-                    return 'You Win!';
-                } else {
-                    alert('You Tied! Scissors and scissors is dangerous though, no running around!');
-                    return 'You Tied!';
-                }
-            }
-        }
 
-        /** Function game(). Call playRound() inside game() to play a 5 round game; keep score; report winner/loser*/
-        let computerWin = 0;
-        let playerWin = 0;
-        let loopCounter = 0;
-        
-        function game(){
-            for (let i = 0; i < 5; i++) {
-                let playerSelection = getPlayerChoice();
-                let computerSelection = getComputerChoice();
-                let roundResult = playRound(playerSelection, computerSelection);
-                switch (roundResult) {
-                    case 'You Lose!':
-                        computerWin += 1;
-                        break;
-                    case 'You Win!':
-                        playerWin += 1;
-                        break;       
-                }
-                loopCounter += 1;
-                if (loopCounter === 5){
-                    if (computerWin > playerWin){
-                        alert('Computer Wins! Better luck next time!');
-                    }
-                    if (playerWin > computerWin){
-                        alert('Player Wins! Long live humans!');
-                    }
-                    if (playerWin === computerWin){
-                        alert('Draw! Play again!');
-                    }
-                }            
-            }
-        }     
-    </script>
+    <script src="./javascript-file.js"></script>
 </body>
 </html>
