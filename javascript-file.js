@@ -127,7 +127,7 @@
                     results.textContent = `5 ROUND MATCH RESULTS: Computer and Player are Tied! DRAW!`;
                 }
                 if (roundCounter < 5){
-                    results.textContent = `Round ${roundCounter}: You Lose! Paper beats Rock! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
+                    results.textContent = `Round ${roundCounter}: You Win! Paper beats Rock! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
                 }
                 
                 
@@ -144,7 +144,7 @@
                     results.textContent = `5 ROUND MATCH RESULTS: Computer and Player are Tied! DRAW!`;
                 }
                 if (roundCounter < 5){
-                    results.textContent = `Round ${roundCounter}: You Lose! Paper beats Rock! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
+                    results.textContent = `Round ${roundCounter}: You Lose! Scissors beats Paper! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
                 }
 
             } else {
@@ -159,7 +159,7 @@
                     results.textContent = `5 ROUND MATCH RESULTS: Computer and Player are Tied! DRAW!`;
                 }
                 if (roundCounter < 5){
-                    results.textContent = `Round ${roundCounter}: You Lose! Paper beats Rock! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
+                    results.textContent = `Round ${roundCounter}: You Tied! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
                 }
                 
                 
@@ -179,7 +179,7 @@
                     results.textContent = `5 ROUND MATCH RESULTS: Computer and Player are Tied! DRAW!`;
                 }
                 if (roundCounter < 5){
-                    results.textContent = `Round ${roundCounter}: You Lose! Paper beats Rock! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
+                    results.textContent = `Round ${roundCounter}: You Lose! Rock beats Scissors! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
                 }
                 
                 
@@ -196,7 +196,7 @@
                     results.textContent = `5 ROUND MATCH RESULTS: Computer and Player are Tied! DRAW!`;
                 }
                 if (roundCounter < 5){
-                    results.textContent = `Round ${roundCounter}: You Lose! Paper beats Rock! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
+                    results.textContent = `Round ${roundCounter}: You Win! Scissors beats Paper! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
                 }
                
                 
@@ -212,7 +212,7 @@
                     results.textContent = `5 ROUND MATCH RESULTS: Computer and Player are Tied! DRAW!`;
                 }
                 if (roundCounter < 5){
-                    results.textContent = `Round ${roundCounter}: You Lose! Paper beats Rock! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
+                    results.textContent = `Round ${roundCounter}: You Tied! Player Win Total: ${playerWinTally}; Computer Win Total: ${computerWinTally}`;
                 }
                 
                 
@@ -220,7 +220,10 @@
             }
             if (roundCounter === 5){
                 roundCounter = 0;
+                computerWinTally = 0;
+                playerWinTally = 0;
             }
+
         };
 
 
