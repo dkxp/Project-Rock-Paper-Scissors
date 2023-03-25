@@ -218,6 +218,9 @@
                 
             }
             }
+            if (roundCounter === 5){
+                roundCounter = 0;
+            }
         };
 
 
